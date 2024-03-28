@@ -1,0 +1,44 @@
+/* Estilos para la página de Recomendador de Fusion de Comunidades */
+
+
+h1 {
+    color: #333;
+}
+
+#recomendador-form {
+    margin: 20px auto;
+    width: 80%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#resultado-recomendador {
+    margin: 20px auto;
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para los elementos de resultados (personalizar según tus necesidades) */
+#resultado-recomendador p {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333;
+}

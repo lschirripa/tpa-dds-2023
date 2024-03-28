@@ -1,0 +1,47 @@
+
+{{#partial "contenido"}}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Servicio de Fusion de Comunidades</title>
+    <link rel="stylesheet" type="text/css" href="/css/fusionador.css">
+</head>
+<body>
+<h1>Fusionador de Comunidades</h1>
+<form method="POST" action="/fusionador" id="fusionador-form">
+    <label for="comunidad1">Selecciona la primera comunidad:</label>
+    <select name="comunidad1">
+        {{#each comunidades}}
+            <option value="{{this.id}}">{{this.nombre}}</option>
+        {{/each}}
+    </select>
+
+    <label for="comunidad2">Selecciona la segunda comunidad:</label>
+    <select name="comunidad2">
+        {{#each comunidades}}
+            <option value="{{this.id}}">{{this.nombre}}</option>
+        {{/each}}
+    </select>
+
+    <button type="submit" id="fusionar-btn">Fusionar Comunidades</button>
+</form>
+<div id="resultado-fusionador">
+    {{#if resultadoFusion}}
+        <h2>Resultado de la Fusion</h2>
+        <p>Se ha fusionado la comunidad: {{resultadoFusion.nombre}}</p>
+        <p>Descripcion: {{resultadoFusion.descripcion}}</p>
+        <p>Grado de Confianza: {{resultadoFusion.puntosDeConfianza}}</p>
+        <p>Miembros:</p>
+        {{#each resultadoFusion.miembros}}
+            <option value="{{this.id}}">{{this.userName}}</option>
+        {{/each}}
+    {{/if}}
+</div>
+<div class="footer">
+    <a href="/admin/config" class="btn btn-secondary">Volver</a>
+</div>
+</body>
+</html>
+{{/partial}}
+{{> templates/base }}

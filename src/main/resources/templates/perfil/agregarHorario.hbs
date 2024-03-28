@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Seleccionar Horario de Notificación</title>
+    <link rel="stylesheet" type="text/css" href="/css/perfil.css">
+</head>
+{{#partial "contenido" }}
+    <!-- Título -->
+    <div class="profile-title">
+        <h1>Seleccionar Horario de Notificación</h1>
+        <!-- Subtítulo con imagen pequeña -->
+        <link rel="stylesheet" type="text/css" href="/css/perfil.css">
+        <div class="subtitle">
+            <img src="/resources/7190932.png" alt="Imagen de perfil">
+            <span>Selecciona un nuevo horario de notificación</span>
+        </div>
+    </div>
+
+    <!-- Formulario para agregar un nuevo horario de notificación -->
+    <form method="POST" action="/perfil/agregar-horario">
+        <div class="user-profile">
+            <div class="profile-item">
+                <span class="label">Nuevo Horario de Notificación (24 horas):</span>
+                <input type="time" id="horarioNotificacion" name="horarioNotificacion"
+                       step="60">
+            </div>
+        </div>
+
+        <div class="footer">
+            <a href="/perfil" class="btn btn-secondary">Cancelar</a>
+            <button type="submit" class="btn btn-primary">Agregar Horario</button>
+        </div>
+    </form>
+{{/partial}}
+{{> templates/base }}
+</html>

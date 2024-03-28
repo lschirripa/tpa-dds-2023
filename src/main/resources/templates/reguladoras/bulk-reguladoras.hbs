@@ -1,0 +1,32 @@
+{{#partial "contenido"}}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir Archivo CSV</title>
+    <link rel="stylesheet" href="/css/bulk-reguladoras.css">
+    <script src="/js/bulk-reguladoras.js"></script>
+</head>
+<body>
+<h1>Subir Archivo CSV</h1>
+<form action="/reguladoras/carga-masiva" method="post" enctype="multipart/form-data"
+      onsubmit="return handleFormSubmit(event);">
+    <input type="file" name="file" accept=".csv">
+    <br><br>
+    <input type="submit" value="Subir Archivo">
+</form>
+
+<!-- trigger CSV template download -->
+<a href="/resources/file.csv" download="file.csv">
+    <button class="download-button">Download CSV Template</button>
+</a>
+
+<div class="footer">
+    <a href="/admin/config" class="btn btn-secondary">Volver</a>
+</div>
+
+</body>
+</html>
+{{/partial}}
+{{> templates/base }}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/css/linea.css">
+    <title>Formulario</title>
+</head>
+<body>
+<h1>Completa el formulario</h1>
+<form method="post" action="linea/nueva">
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" id="nombre" required><br>
+
+    <label for="latitud">Latitud:</label>
+    <input type="text" name="latitud" id="latitud" required><br>
+
+    <label for="longitud">Longitud:</label>
+    <input type="text" name="longitud" id="longitud" required><br>
+
+    <label for="estaciones">Estaciones:</label>
+    <select name="estaciones" id="estaciones" multiple>
+        {{#each estacionesDisponibles}}
+            <option value="{{this}}">{{this}}</option>
+        {{/each}}
+    </select><br>
+
+    <label for="estacionorigen">Estacion De Origen:</label>
+    <select name="estacionorigen" id="estacionorigen">
+        {{#each estacionesDisponibles}}
+            <option value="{{this}}">{{this}}</option>
+        {{/each}}
+    </select><br>
+
+    <label for="estaciondestino">Estacion De Destino:</label>
+    <select name="estaciondestino" id="estaciondestino">
+        {{#each estacionesDisponibles}}
+            <option value="{{this}}">{{this}}</option>
+        {{/each}}
+    </select><br>
+
+    <input type="submit" value="Enviar">
+</form>
+</body>
+<div class="footer">
+    <a href="/lineas" class="btn btn-secondary">Volver</a>
+</div>
+</html>

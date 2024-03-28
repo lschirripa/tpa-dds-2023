@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Perfil</title>
+    <link rel="stylesheet" type="text/css" href="/css/perfil.css">
+</head>
+{{#partial "contenido" }}
+    <div class="user-profile">
+        <div class="profile-title">
+            <h1>Editar Perfil</h1>
+            <div class="subtitle">
+                <img src="/resources/7190932.png" alt="Subtítulo">
+                <span>¡Edita tu perfil!</span>
+            </div>
+        </div>
+
+        <!-- Campos editables del perfil -->
+        <form method="POST" action="/perfil/editar">
+            <div class="profile-item">
+                <span class="label">Usuario:</span>
+                <input type="text" name="userName" value="{{usuario.userName}}">
+            </div>
+
+            <div class="profile-item">
+                <span class="label">Nombre:</span>
+                <input type="text" name="nombre" value="{{usuario.datosPersonales.nombre}}">
+            </div>
+
+            <div class="profile-item">
+                <span class="label">Apellido:</span>
+                <input type="text" name="apellido" value="{{usuario.datosPersonales.apellido}}">
+            </div>
+
+            <div class="profile-item">
+                <span class="label">Correo:</span>
+                <input type="email" name="correo" value="{{usuario.datosPersonales.correo}}">
+            </div>
+
+            <div class="profile-item">
+                <span class="label">Telefono:</span>
+                <input type="text" name="telefono" value="{{usuario.datosPersonales.telefono}}">
+            </div>
+
+            <div class="form-group">
+                <label>Forma de Notificación:</label>
+                <select name="formaNotificacion">
+                    {{#each formaNotificacion}}
+                        <option value="{{this}}">{{this}}</option>
+                    {{/each}}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Modo de Notificación:</label>
+                <select name="modoNotificacion">
+                    {{#each modoNotificacion}}
+                        <option value="{{this}}">{{this}}</option>
+                    {{/each}}
+                </select>
+            </div>
+
+            <div class="footer">
+                <a href="/perfil" class="btn btn-secondary">Cancelar</a>
+                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+            </div>
+        </form>
+    </div>
+{{/partial}}
+{{> templates/base }}
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+
+{{#partial "contenido"}}
+<head>
+    <link rel="stylesheet" href="/css/establecimiento.css">
+
+</head>
+
+<body>
+    <h2>Crear Nuevo Incidente</h2>
+    <form method="POST" {{#if incidente.id}}
+          action="/incidentes/{{incidente.id}}" {{else}}
+          action="/incidentes/nuevo" {{/if}}>
+        </div>
+        <label>Descripcion</label>
+        <input name="Descripcion" {{#if incidente}}
+               value="{{incidente.descripcion}}" {{/if}} placeholder="Descripcion">
+        </div>
+        <div class="form-group">
+            <label>Selecciona un Servicio Asociado</label>
+            <select name="serviciosAsociados">
+                {{#each serviciosAsociados}}
+                    <option value="{{this.id}}">{{this.entidad.nombre}}
+                        - {{this.establecimiento.nombre}} - {{this.servicio.nombre}}</option>
+                {{/each}}
+            </select>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+    </body>
+{{/partial}}
+{{> templates/base}}
+</html>

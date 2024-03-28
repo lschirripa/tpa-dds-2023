@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Perfil de Usuario</title>
+    <link rel="stylesheet" type="text/css" href="/css/incidente.css">
+</head>
+
+{{#partial "contenido"}}
+    <h2>Incidentes</h2>
+
+    <!-- Filtros por Descripción, Servicio Incidentado y Estado (Resuelto o No Resuelto) -->
+    <div class="filters">
+        <form method="get" action="/incidentes" id="filter-form">
+            <div class="filter">
+                <label for="filtroDescripcion">Descripción:</label>
+                <input type="text" id="filtroDescripcion" name="Descripcion"
+                       value="{{filtro.descripcion}}">
+            </div>
+            <div class="filter">
+                <label for="filtroServicio">Servicio Incidentado:</label>
+                <select id="filtroServicio" name="servicioIncidentado">
+                    <option value="">Todos</option>
+                    {{#each serviciosIncidentadosDisponibles}}
+                        <option value="{{this.id}}">{{this.entidad.nombre}}
+                            - {{this.establecimiento.nombre}} - {{this.servicio.nombre}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="filter">
+                <label for="filtroResuelto">Estado:</label>
+                <select id="filtroResuelto" name="resuelto">
+                    <option value="">Todos</option>
+                    <option value="true">Resuelto</option>
+                    <option value="false">No Resuelto</option>
+                </select>
+            </div>
+            <button type="submit" id="aplicarFiltro">Aplicar Filtro</button>
+            <a href="/incidentes" class="btn btn-secondary" id="restablecerFiltros">Restablecer
+                Filtros</a>
+        </form>
+    </div>
+
+    <table class="table table-striped table-hover">
+        <tr>
+            <th>Descripción</th>
+            <th>Servicio Incidentado</th>
+            <th>Fecha Apertura</th>
+            <th>Fecha Cierre</th>
+            <th>Acciones</th>
+        </tr>
+        <tbody>
+        {{#each incidentesFormateados}}
+            <tr>
+                <td>{{this.incidente.descripcion}}</td>
+                <td>{{this.incidente.servicioIncidentado.entidad.nombre}}
+                    - {{this.incidente.servicioIncidentado.establecimiento.nombre}}
+                    - {{this.incidente.servicioIncidentado.servicio.nombre}}</td>
+                <td>{{this.fechaCreacion}}</td>
+                <td>{{this.fechaResolucion}}</td>
+            <td>
+                {{#if this.incidente.fechaResolucion}}
+                    <td>Incidente Resuelto</td>
+                {{else}}
+                    <form method="POST" action="/incidentes/{{this.incidente.id}}/marcar-resuelto"
+                          onsubmit="return confirm('¿Estás seguro de que deseas marcar este incidente como resuelto?');">
+                        <button class="btn btn-success" type="submit">Marcar como Resuelto</button>
+                    </form>
+                {{/if}}
+                </td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+    <div align="center">
+        <a class="btn btn-primary" href="/incidentes/crear">Agregar Incidente</a>
+    </div>
+    <div class="footer">
+        <a href="/init" class="btn btn-secondary">Volver</a>
+    </div>
+{{/partial}}
+{{> templates/base}}
+</html>

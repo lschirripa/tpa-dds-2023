@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="/css/register.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+
+<div class="carousel-background">
+    <div class="slide"><img src="resources/image-6.jpg" alt="Photo 6"></div>
+    <div class="slide"><img src="resources/image-4.jpg" alt="Photo 4"></div>
+    <div class="slide"><img src="resources/image-1.jpg" alt="Photo 1"></div>
+    <div class="slide"><img src="resources/image-3.jpg" alt="Photo 3"></div>
+    <div class="slide"><img src="resources/image-2.jpg" alt="Photo 2"></div>
+    <div class="slide"><img src="resources/image-5.jpg" alt="Photo 5"></div>
+    <!-- Add more image slides as needed -->
+</div>
+
+<div class="container">
+    <h1>Register</h1>
+    <form action="/register" method="post">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required><br>
+
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" required><br>
+
+        <label for="apellido">Apellido</label>
+        <input type="text" id="apellido" name="apellido" required><br>
+
+        <label for="telefono">Celular</label>
+        <input type="text" id="telefono" name="telefono" required><br>
+
+        <label for="correo">Correo</label>
+        <input type="email" id="correo" name="correo" required><br>
+
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <button type="submit" id="registerButton">Register</button>
+    </form>
+</div>
+<script>
+    // JavaScript for the carousel
+    document.addEventListener("DOMContentLoaded", function () {
+        let currentSlide = 0;
+        const slides = document.querySelectorAll(".slide");
+
+        function showSlide(n) {
+            slides.forEach((slide) => {
+                slide.style.display = "none";
+            });
+            slides[n].style.display = "block";
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Show first slide
+        showSlide(currentSlide);
+
+        // Automatic slide change (optional)
+        setInterval(nextSlide, 3000); // Change slide every 3 seconds
+
+        // Previous and Next buttons (optional)
+        // Add event listeners or use your own navigation method
+        // Example: document.getElementById("prevButton").addEventListener("click", prevSlide);
+        // Example: document.getElementById("nextButton").addEventListener("click", nextSlide);
+    });
+
+</script>
+</body>
+</html>

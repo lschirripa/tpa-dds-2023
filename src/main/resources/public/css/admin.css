@@ -1,0 +1,87 @@
+/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    /* Your existing styles */
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column; /* Ensures children stretch vertically */
+    /*background-image: url('/resources/metrics.jpg'); !* Replace 'path_to_your_image.jpg' with your image file path *!*/
+    background-size: cover; /* Ensure the background image covers the entire body */
+    background-attachment: fixed; /* Keeps the background image in place */
+    opacity: 0.9; /* Adjust the opacity value as needed */
+}
+
+header {
+    background-color: #0d2bf0b5;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+    flex: 1; /* Fill remaining height */
+}
+
+.box {
+    width: 49%;
+    height: 260px;
+    margin-bottom: 5px; /* Adjust this value */
+    background-color: #f0f0f0;
+}
+
+.volver {
+    background-color: #0aca31; /* Green color, adjust to your preference */
+    font-family: Roboto;
+
+}
+
+#myDoughnutChart {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+#myLineChart {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+#myChart {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+#myBubbleChart {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}

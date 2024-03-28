@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+<div class="carousel-background">
+    <div class="slide"><img src="resources/image-6.jpg" alt="Photo 6"></div>
+    <div class="slide"><img src="resources/image-4.jpg" alt="Photo 4"></div>
+    <div class="slide"><img src="resources/image-1.jpg" alt="Photo 1"></div>
+    <div class="slide"><img src="resources/image-3.jpg" alt="Photo 3"></div>
+    <div class="slide"><img src="resources/image-2.jpg" alt="Photo 2"></div>
+    <div class="slide"><img src="resources/image-5.jpg" alt="Photo 5"></div>
+    <!-- Add more image slides as needed -->
+</div>
+
+<div class="login-container">
+    <h1>Login</h1>
+    <form class="login-form" action="/login" method="POST">
+        <div class="input-group">
+            <label for="username">Username</label>
+            <input id="username" type="text" name="username" placeholder="Username" required>
+        </div>
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input id="password" type="password" name="password" placeholder="Password" required>
+        </div>
+        <button type="submit">Login</button>
+    </form>
+
+    <!-- Additional links/buttons -->
+    <div class="additional-options">
+        <br/>
+        <a href="/register">Create an Account</a>
+        <br/>
+        <br/>
+        <a href="/">Forgot Your Password?</a>
+    </div>
+</div>
+<script>
+    // JavaScript for the carousel
+    document.addEventListener("DOMContentLoaded", function () {
+        let currentSlide = 0;
+        const slides = document.querySelectorAll(".slide");
+
+        function showSlide(n) {
+            slides.forEach((slide) => {
+                slide.style.display = "none";
+            });
+            slides[n].style.display = "block";
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Show first slide
+        showSlide(currentSlide);
+
+        // Automatic slide change (optional)
+        setInterval(nextSlide, 3000); // Change slide every 3 seconds
+
+        // Previous and Next buttons (optional)
+        // Add event listeners or use your own navigation method
+        // Example: document.getElementById("prevButton").addEventListener("click", prevSlide);
+        // Example: document.getElementById("nextButton").addEventListener("click", nextSlide);
+    });
+</script>
+
+</body>
+</html>

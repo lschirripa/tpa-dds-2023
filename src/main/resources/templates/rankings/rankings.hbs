@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visor de PDFs</title>
+    <link rel="stylesheet" href="/css/rankings.css">
+    <link rel="stylesheet" href="https://mozilla.github.io/pdf.js/web/viewer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+          rel="stylesheet">
+</head>
+{{#partial "contenido" }}
+
+    <body>
+
+    <h1>RANKING DE INCIDENTES</h1>
+    <br/>
+    <br/>
+    <!--<ul>-->
+            <!--    {{#each pdfs}}-->
+    <!--        <li>-->
+    <!--            <a href="#" onclick="loadPDF('{{this}}')">{{this}}</a>-->
+    <!--        </li>-->
+            <!--    {{/each}}-->
+    <!--</ul>-->
+
+    <!-- Add the button container above the list of PDFs -->
+    <div class="btn-container">
+        <button onclick="loadPDF('pdf1.pdf')">Mayor cantidad de incidentes reportados en la semana
+        </button>
+        <button onclick="loadPDF('pdf2.pdf')">Mayor promedio de tiempo de cierre</button>
+        <button onclick="loadPDF('pdf3.pdf')">Mayor grado de impacto de las problemáticas</button>
+    </div>
+
+    <div id="pdf-viewer"></div>
+    <button id="download-button" onclick="downloadPDF()">Descargar PDF</button>
+
+    <!--<ul>-->
+    <!--    <li>-->
+    <!--        <button onclick="loadPDF('pdf1.pdf')">View PDF 1</button>-->
+    <!--    </li>-->
+    <!--    <li>-->
+    <!--        <button onclick="loadPDF('pdf2.pdf')">View PDF 2</button>-->
+    <!--    </li>-->
+    <!--    <li>-->
+    <!--        <button onclick="loadPDF('pdf3.pdf')">View PDF 3</button>-->
+    <!--    </li>-->
+    <!--</ul>-->
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="/js/pdfViewer.js"></script>
+    <script src="/js/pdfDownloader.js"></script>
+
+    <div class="footer">
+        <a href="/init" class="btn btn-secondary">Volver</a>
+    </div>
+
+    </body>
+{{/partial}}
+{{> templates/base }}
+
+</html>

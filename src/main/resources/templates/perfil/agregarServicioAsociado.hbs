@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Agregar un Servicio Asociado de Interes</title>
+    <!-- Agrega enlaces a CSS y otros recursos si es necesario -->
+    <link rel="stylesheet" type="text/css" href="/css/perfil.css">
+</head>
+{{#partial "contenido" }}
+<body>
+<h1>Agregar Servicio Asociado</h1>
+
+<form method="POST" action="/perfil/agregar-servicios">
+    <label>Servicios Asociados:</label>
+    <select name="serviciosAsociados" multiple>
+        {{#each serviciosAsociados}}
+            <option value="{{this.id}}">{{this.id}} - {{this.entidad.nombre}}
+                - {{this.establecimiento.nombre}} - {{this.servicio.nombre}}</option>
+        {{/each}}
+    </select>
+
+    <label for="tipoUsuario">Tipo de Usuario:</label>
+    <select name="tipoUsuario" id="tipoUsuario">
+        <option value="AFECTADO">AFECTADO</option>
+        <option value="OBSERVADOR">OBSERVADOR</option>
+    </select>
+
+    <button type="submit">Agregar los Servicios Asociados Seleccionados</button>
+</form>
+<a href="/perfil/agregar-servicios-multiples" class="btn btn-secondary">Agregar Servicio por
+    Establecimiento</a>
+<div class="footer">
+    <a href="/perfil" class="btn btn-secondary">Volver</a>
+</div>
+</body>
+{{/partial}}
+{{> templates/base }}
+</html>

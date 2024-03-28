@@ -1,0 +1,29 @@
+{{#partial "contenido" }}
+    <h2>Organizaciones</h2>
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <tr>
+                <th>Nombre</th>
+                <th>Sucursales</th>
+            </tr>
+            <tbody>
+            {{#each organizaciones}}
+                <tr>
+                    <td>{{this.nombre}}</td>
+                    <td>
+                        {{#each this.sucursales}}
+                            {{this.nombre}}<br>
+                        {{/each}}
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+    <div align="center">
+        <a class="btn btn-primary" href="/organizacion/crear">Agregar Organizacion</a>
+    </div>
+    <div class="footer">
+        <a href="/admin/config" class="btn btn-secondary">Volver</a>
+    </div>
+{{/partial}}
+{{> templates/base }}

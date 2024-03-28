@@ -1,0 +1,43 @@
+{{#partial "contenido" }}
+<head>
+    <link rel="stylesheet" href="/css/establecimiento.css">
+    <title>Servicio Asociado Nuevo</title>
+</head>
+    <h2>Crear Nuevo Servicio Asociado</h2>
+    <form method="POST" {{#if servicioAsociado.id}}
+          action="/serviciosasociados/{{servicioAsociado.id}}" {{else}}
+          action="/serviciosasociados/nuevo" {{/if}}>
+        <div class="form-group">
+            <label>Selecciona una Entidad</label>
+            <select name="entidad">
+                {{#each entidades}}
+                    <option value="{{this.id}}">{{this.nombre}}</option>
+                {{/each}}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Selecciona un Establecimiento</label>
+            <select name="establecimiento">
+                {{#each establecimientos}}
+                    <option value="{{this.id}}">{{this.nombre}}</option>
+                {{/each}}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Selecciona un Servicio</label>
+            <select name="servicio">
+                {{#each servicios}}
+                    <option value="{{this.id}}">{{this.nombre}}</option>
+                {{/each}}
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+                <div class="footer">
+                    <a href="/serviciosasociados" class="btn btn-secondary">Volver</a>
+                </div>
+{{/partial}}
+{{> templates/base}}

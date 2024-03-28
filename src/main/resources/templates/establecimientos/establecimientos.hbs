@@ -1,0 +1,31 @@
+{{#partial "contenido" }}
+    <h2>Establecimientos</h2>
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <tr>
+                <th>Tipo</th>
+                <th>Nombre</th>
+                <th>Servicios</th>
+            </tr>
+            <tbody>
+            {{#each establecimientos}}
+                <tr>
+                    <td>{{this.tipo}}</td>
+                    <td>{{this.establecimiento.nombre}}</td>
+                    <td>
+                        {{#each this.establecimiento.servicios}}
+                            {{this.nombre}}<br>
+                        {{/each}}
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+    <div align="center">
+        <a class="btn btn-primary" href="/establecimientos/crear">Agregar Establecimiento</a>
+    </div>
+    <div class="footer">
+        <a href="/admin/config" class="btn btn-secondary">Volver</a>
+    </div>
+{{/partial}}
+{{> templates/base }}

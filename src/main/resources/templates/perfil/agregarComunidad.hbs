@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unirse a una Comunidad</title>
+    <!-- Agrega enlaces a CSS y otros recursos si es necesario -->
+    <link rel="stylesheet" type="text/css" href="/css/perfil.css">
+</head>
+{{#partial "contenido" }}
+<body>
+<h1>Unirse a una Comunidad</h1>
+
+<form method="POST" action="/perfil/unirse-comunidades">
+    <label>Comunidades:</label>
+    <select name="comunidades" multiple>
+        {{#each comunidades}}
+            <option value="{{id}}">{{nombre}}</option>
+        {{/each}}
+    </select>
+    <button type="submit">Unirse a las Comunidades Seleccionadas</button>
+</form>
+
+<a href="/perfil" class="btn btn-secondary">Volver</a>
+</body>
+{{/partial}}
+{{> templates/base }}
+</html>

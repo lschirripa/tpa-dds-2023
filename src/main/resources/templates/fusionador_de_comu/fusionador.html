@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Servicio de Fusión de Comunidades</title>
+</head>
+<body>
+<h1>Recomendador de Fusion de Comunidades</h1>
+<form id="recomendador-form">
+    <!-- Agrega aquí los campos de entrada necesarios, si los hay -->
+    <button id="recomendar-btn" type="button">Recomendar Fusion</button>
+</form>
+<div id="resultado-recomendador">
+    <!-- Aquí se mostrará el resultado del recomendador -->
+</div>
+
+<h1>Fusionador de Comunidades</h1>
+<form id="fusionador-form">
+    <label for="comunidad1">Selecciona la primera comunidad:</label>
+    <select id="comunidad1" name="comunidad1">
+        {{#each comunidades}}
+        <option value="{{id}}">{{nombre}}</option>
+        {{/each}}
+    </select>
+
+    <label for="comunidad2">Selecciona la segunda comunidad:</label>
+    <select id="comunidad2" name="comunidad2">
+        {{#each comunidades}}
+        <option value="{{id}}">{{nombre}}</option>
+        {{/each}}
+    </select>
+
+    <button id="fusionar-btn" type="button">Fusionar Comunidades</button>
+</form>
+<div id="resultado-fusionador">
+    <!-- Aquí se mostrará el resultado de la fusión de comunidades -->
+</div>
+</body>
+</html>

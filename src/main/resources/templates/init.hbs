@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pagina Principal</title>
+    <link rel="stylesheet" href="/css/init.css">
+</head>
+{{#partial "contenido" }}
+<body style="background-image: url('tu_ruta/fondo.jpg'); background-size: cover;">
+
+
+<div class="profile-title">
+    <div class="subtitle">
+        <a href="/perfil">
+            <img src="/resources/7190932.png" alt="Imagen de perfil">
+        </a>
+    </div>
+</div>
+       <a href="/logout" id="logout-button" class="btn btn-primary">Cerrar Sesion</a>
+
+
+<ul>
+    <li><a  href="/incidentes" data-text="Incidentes"> Incidentes </a></li>
+    <li><a  href="/rankings" data-text="Rankings">Rankings</a></li>
+    <li><a  href="/sugerenciarevision" data-text="Sugerencias">Sugerencias </a></li>
+    <li><a  href="/admin/config" data-text="Configuraciones"> Configuraciones</a></li>
+  </ul>
+</div>
+
+</body>
+{{/partial}}
+{{> templates/base }}
+</html>

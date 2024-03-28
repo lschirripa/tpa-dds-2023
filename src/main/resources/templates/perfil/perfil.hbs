@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Perfil de Usuario</title>
+    <link rel="stylesheet" type="text/css" href="/css/perfil.css">
+</head>
+{{#partial "contenido" }}
+
+    <!-- Título -->
+    <div class="profile-title">
+        <h1>Perfil de Usuario</h1>
+        <!-- Subtítulo con imagen pequeña -->
+        <div class="subtitle">
+            <img src="/resources/7190932.png" alt="Imagen de perfil">
+            <span>¡Bienvenido a tu perfil!</span>
+        </div>
+    </div>
+
+    <div class="user-profile">
+        <div class="profile-item">
+            <span class="label">Usuario:</span>
+            <span class="value">{{usuario.userName}}</span>
+        </div>
+
+        <div class="profile-item">
+            <span class="label">Nombre:</span>
+            <span class="value">{{usuario.datosPersonales.nombre}}</span>
+        </div>
+
+        <div class="profile-item">
+            <span class="label">Apellido:</span>
+            <span class="value">{{usuario.datosPersonales.apellido}}</span>
+        </div>
+
+        <div class="profile-item">
+            <span class="label">Correo:</span>
+            <span class="value">{{usuario.datosPersonales.correo}}
+            </span>
+        </div>
+
+        <div class="profile-item">
+            <span class="label">Telefono:</span>
+            <span class="value">{{usuario.datosPersonales.telefono}}</span>
+        </div>
+
+        <div class="profile-item">
+            <span class="label">Forma de Notificación:</span>
+            <span class="value">{{usuario.formaNotificacion}}</span>
+        </div>
+
+        <div class="profile-item">
+            <span class="label">Modo de Notificación:</span>
+            <span class="value">{{usuario.modoNotificacion}}</span>
+        </div>
+
+        <div class="profile-item">
+            <span class="label">Grado de Confianza:</span>
+            <span class="value">{{usuario.gradoConfianza.name}}</span>
+        </div>
+
+        <!-- Comunidades -->
+        <div class="profile-item">
+            <span class="label">Comunidades:</span>
+            <ul>
+                {{#each usuario.comunidades}}
+                    <li>{{this.nombre}}
+                        <form method="POST" action="/perfil/{{this.id}}/eliminar-comunidad"
+                              onsubmit="return confirm('¿Estás seguro de que deseas eliminar esta comunidad?');">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fa-solid fa-trash-can"></i> Eliminar
+                            </button>
+                        </form>
+                    </li>
+                {{/each}}
+            </ul>
+            <a href="/perfil/agregar-comunidades" class="btn btn-primary">Agregar</a>
+        </div>
+
+        <!-- Servicios Asociados -->
+        <div class="profile-item">
+            <span class="label">Servicios-Asociados De Interes:</span>
+            <ul>
+                {{#each usuario.serviciosAsociados}}
+                    <li>{{this.id}} - {{this.entidad.nombre}}
+                        - {{this.establecimiento.nombre}} - {{this.servicio.nombre}}
+                        <form method="POST" action="/perfil/{{this.id}}/eliminar-servicio"
+                              onsubmit="return confirm('¿Estás seguro de que deseas eliminar este Servicio Asociado?');">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fa-solid fa-trash-can"></i> Eliminar
+                            </button>
+                        </form>
+                    </li>
+                {{/each}}
+            </ul>
+            <a href="/perfil/agregar-servicios" class="btn btn-primary">Agregar</a>
+        </div>
+
+        <div class="profile-item">
+            <span class="label">Horarios De Notificacion:</span>
+            <ul>
+                {{#each usuario.horariosNotificacion}}
+                    <li>{{this}}
+                        <form method="POST" action="/perfil/eliminar-horario"
+                              onsubmit="return confirm('¿Estás seguro de que deseas eliminar este Horario?');">
+                            <input type="hidden" name="horarioNotificacion" value="{{this}}">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fa-solid fa-trash-can"></i> Eliminar
+                            </button>
+                        </form>
+                    </li>
+                {{/each}}
+            </ul>
+            <a href="/perfil/agregar-horario" class="btn btn-primary">Agregar</a>
+        </div>
+
+
+        <div class="footer">
+            <a href="/init" class="btn btn-secondary">Volver</a>
+            <a href="/perfil/editar" class="btn btn-primary">Editar Perfil</a>
+        </div>
+    </div>
+{{/partial}}
+{{> templates/base }}
+</html>

@@ -1,0 +1,228 @@
+/* Resetting default margin and padding */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* CSS for the fixed header and buttons */
+header {
+    position: fixed;
+    font-family: Roboto;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0d2bf0b5;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    font-family: Roboto;
+}
+
+/* Style for the buttons */
+.signup-button,
+.login-button {
+    padding: 18px 30px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-family: Roboto;
+
+}
+
+.signup-button {
+    background-color: #0aca31; /* Green color, adjust to your preference */
+    font-family: Roboto;
+
+}
+
+.login-button {
+    background-color: #0aca31; /* Blue color, adjust to your preference */
+    font-family: Roboto;
+
+}
+
+
+/* Adjust the main content to provide space below the fixed header */
+main {
+    padding-top: 100px;
+    /* Other styles */
+    font-family: Roboto;
+
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-family: Roboto;
+}
+
+/* Styling section containers */
+.section {
+    margin-bottom: 30px;
+    font-family: Roboto;
+
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative; /* Ensure z-index works properly */
+    z-index: 1; /* Place the text above the overlay */
+    font-family: Roboto;
+
+}
+
+/* Adding a semi-transparent overlay on background images */
+.carousel-background .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    /* Add a semi-transparent background */
+    background: rgba(0, 0, 0, 0.6); /* Adjust opacity as needed */
+    font-family: Roboto;
+
+}
+
+/* Adjusting text color for better readability */
+.section .container {
+    color: #333; /* Change text color to contrast with the background */
+    font-family: Roboto;
+
+}
+
+/* Ensuring paragraphs have a readable background */
+.section .container p {
+    background-color: rgba(255, 255, 255, 0.8); /* Light background for paragraphs */
+    padding: 15px; /* Add padding for better readability */
+    border-radius: 5px; /* Add rounded corners */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a slight shadow for separation */
+    font-family: Roboto;
+
+}
+
+/* Styling section headings */
+h2 {
+    font-size: 2em;
+    font-family: Roboto;
+
+    margin-bottom: 10px;
+}
+/* Styling section headings for better readability */
+.section .container h2 {
+    background-color: rgba(255, 255, 255, 0.8); /* Light background for headings */
+    padding: 10px; /* Adjust padding for better appearance */
+    border-radius: 5px; /* Add rounded corners */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a slight shadow for separation */
+    margin-bottom: 15px; /* Provide space between headings and paragraphs */
+    color: #333; /* Adjust text color for better contrast */
+    font-family: Roboto;
+
+}
+
+
+/* Styling paragraphs */
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    font-family: Roboto;
+
+}
+
+/* Styling the 'Show Additional Information' button */
+#toggleButton {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 15px;
+    font-family: Roboto;
+
+}
+
+/* Styling additional content that is initially hidden */
+#extraContent {
+    display: none;
+    margin-top: 15px;
+    font-family: Roboto;
+
+}
+
+/* Hover effect for the button */
+#toggleButton:hover {
+    background-color: #555;
+    font-family: Roboto;
+
+}
+
+/* Carousel styles */
+.carousel {
+    width: 100%;
+    font-family: Roboto;
+    overflow: hidden;
+}
+
+.slide {
+    float: left;
+    width: 100%;
+    display: none;
+    font-family: Roboto;
+
+}
+
+/* Ensure images fill the slide container */
+.slide img {
+    width: 100%;
+    height: auto;
+    font-family: Roboto;
+
+}
+
+/* Add some styling to the navigation arrows if needed */
+/* For example, with Slick or Swiper, these would be customized */
+
+/* CSS for the background carousel */
+.carousel-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Send the carousel to the background */
+    overflow: hidden;
+    font-family: Roboto;
+
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    font-family: Roboto;
+
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure images cover the entire slide */
+}

@@ -1,0 +1,75 @@
+{{#partial "contenido"}}
+    <h2>Servicios Asociados Disponibles</h2>
+
+    <!-- Filtros por Entidad, Establecimiento y Servicio -->
+    <div class="filters">
+        <form method="get" action="/serviciosasociados" id="filter-form">
+            <div class="filter">
+                <label for="filtroEntidad">Entidad:</label>
+                <select id="filtroEntidad" name="entidad">
+                    <option value="">Todos</option>
+                    {{#each entidadesDisponibles}}
+                        <option value="{{id}}">{{nombre}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="filter">
+                <label for="filtroEstablecimiento">Establecimiento:</label>
+                <select id="filtroEstablecimiento" name="establecimiento">
+                    <option value="">Todos</option>
+                    {{#each establecimientosDisponibles}}
+                        <option value="{{id}}">{{nombre}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="filter">
+                <label for="filtroServicio">Servicio:</label>
+                <select id="filtroServicio" name="servicio">
+                    <option value="">Todos</option>
+                    {{#each serviciosDisponibles}}
+                        <option value="{{id}}">{{nombre}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <button type="submit" id="aplicarFiltro">Aplicar Filtro</button>
+            <a href="/serviciosasociados" class="btn btn-secondary" id="restablecerFiltros">Restablecer
+                Filtros</a>
+        </form>
+    </div>
+
+    <table class="table table-striped table-hover">
+        <tr>
+            <th>Entidad</th>
+            <th>Establecimiento</th>
+            <th>Servicio</th>
+            <th>Acciones</th>
+        </tr>
+        <tbody>
+        {{#each serviciosAsociados}}
+            <tr>
+                <td>{{this.entidad.nombre}}</td>
+                <td>{{this.establecimiento.nombre}}</td>
+                <td>{{this.servicio.nombre}}</td>
+                <td>
+                    <a class="btn btn-secondary" href="/serviciosasociados/{{this.id}}/editar"><i
+                            class="fa-solid fa-pen-to-square"></i></a>
+                    <form method="POST" action="/serviciosasociados/{{this.id}}/eliminar"
+                          onsubmit="return confirm('¿Estás seguro de que deseas eliminar este servicio asociado?');">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger"><i
+                                class="fa-solid fa-trash-can"></i></button>
+                    </form>
+                </td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+    <div align="center">
+        <a class="btn btn-primary" href="/serviciosasociados/crear">Crear Nuevo Servicio
+            Asociado</a>
+    </div>
+    <div class="footer">
+        <a href="/admin/config" class="btn btn-secondary">Volver</a>
+    </div>
+{{/partial}}
+{{> templates/base}}

@@ -1,0 +1,31 @@
+
+{{#partial "contenido"}}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Servicio de Fusión de Comunidades</title>
+    <link rel="stylesheet" type="text/css" href="/css/recomendador.css">
+</head>
+<body>
+<h1>Recomendador de Fusion de Comunidades</h1>
+<form id="recomendador-form">
+    <!-- Agrega aquí los campos de entrada necesarios, si los hay -->
+    <div align="center">
+        <a class="btn btn-primary" href="/recomendador/recomendar">Recomendar Comunidades</a>
+    </div>
+    <!--<button id="recomendar-btn" type="button">Recomendar Fusion</button> -->
+</form>
+<div id="resultado-recomendador">
+    {{#each recomendaciones}}
+        <p>{{id}}</p>
+        <p>{{nombre}}</p>
+    {{/each}}
+</div>
+<div class="footer">
+    <a href="/admin/config" class="btn btn-secondary">Volver</a>
+</div>
+</body>
+</html>
+{{/partial}}
+{{> templates/base }}

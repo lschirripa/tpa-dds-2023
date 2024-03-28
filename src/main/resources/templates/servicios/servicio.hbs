@@ -1,0 +1,22 @@
+{{#partial "contenido" }}
+<head>
+    <link rel="stylesheet" href="/css/establecimiento.css">
+    <title>Servicio Nuevo</title>
+</head>
+    <form method="POST" {{#if servicio.id}}
+          action="/servicios/{{servicio.id}}" {{else}} action="/servicios/nuevo" {{/if}}>
+        <div class="form-group">
+            <label>Nombre</label>
+            <input name="nombre" {{#if servicio}}
+                   value="{{servicio.nombre}}" {{/if}} placeholder="Nombre">
+            <label>Descripcion</label>
+            <input name="descripcion" {{#if servicio}}
+                   value="{{servicio.descripcion}}" {{/if}} placeholder="Descripcion">
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+            <div class="footer">
+                <a href="/servicios" class="btn btn-secondary">Volver</a>
+            </div>
+{{/partial}}
+{{> templates/base }}

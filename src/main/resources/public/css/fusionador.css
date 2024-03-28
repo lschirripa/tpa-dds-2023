@@ -1,0 +1,65 @@
+/* Estilo para el cuerpo de la página */
+
+
+
+h1 {
+    color: #ecf0f1;
+}
+
+/* Estilo para el formulario */
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #2980b9;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #27ae60;
+    color: #ecf0f1;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #219347;
+}
+
+/* Estilo para el resultado de la fusión */
+#resultado-fusionador {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #2980b9;
+    border-radius: 10px;
+    background-color: #2980b9;
+}
+
+#resultado-fusionador h2 {
+    color: #ecf0f1;
+}
+
+#resultado-fusionador p {
+    color: #ecf0f1;
+    margin: 5px 0;
+}
+
+/* Estilo para el botón */
+#fusionar-btn {
+    background-color: #27ae60;
+}
+
+#fusionar-btn:hover {
+    background-color: #219347;
+}

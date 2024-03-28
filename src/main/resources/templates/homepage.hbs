@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Jiren App</title>
+    <link rel="stylesheet" href="css/homepage.css">
+</head>
+
+<body>
+<div class="carousel-background">
+    <div class="slide"><img src="resources/image-6.jpg" alt="Photo 6"></div>
+    <div class="slide"><img src="resources/image-4.jpg" alt="Photo 4"></div>
+    <div class="slide"><img src="resources/image-1.jpg" alt="Photo 1"></div>
+    <div class="slide"><img src="resources/image-3.jpg" alt="Photo 3"></div>
+    <div class="slide"><img src="resources/image-2.jpg" alt="Photo 2"></div>
+    <div class="slide"><img src="resources/image-5.jpg" alt="Photo 5"></div>
+    <!-- Add more image slides as needed -->
+</div>
+
+<header>
+    <div class="header-content">
+        <h1> JIREN </h1>
+        <br/>
+        <div class="header-buttons">
+            <button class="signup-button">Sign Up </button>
+            <button class="login-button">Login</button>
+        </div>
+    </div>
+</header>
+
+
+<main>
+    <section class="section">
+        <div class="container">
+            <h2>Bienvenido/a !</h2>
+            <p>
+                ¡Bienvenido a nuestra plataforma inclusiva para la comunidad de personas con discapacidades y movilidad reducida! Nos enorgullece presentarte una herramienta innovadora que busca mejorar la experiencia de transporte y acceso a establecimientos para todos, sin importar sus capacidades físicas.
+            </p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>Nuestra Mision</h2>
+            <p>
+                Nuestra misión es crear un entorno inclusivo y accesible donde todos los usuarios puedan compartir información valiosa sobre la accesibilidad de los transportes públicos y establecimientos, brindando apoyo y facilitando la vida diaria de aquellos que enfrentan desafíos de movilidad.
+            </p>
+        </div>
+    </section>
+
+    <section class="section" id="additionalInfo">
+        <div class="container">
+            <h2>Como funciona?</h2>
+            <p>
+                Es simple: los usuarios pueden informar sobre incidentes, problemas o mejoras relacionadas con la accesibilidad en diferentes lugares y servicios. Los comentarios y reportes generados por la comunidad son vitales para mejorar la accesibilidad en tiempo real.
+                ¿Eres un usuario con movilidad reducida, una persona ciega, una futura mamá o alguien interesado en ayudar a crear entornos más inclusivos? ¡Únete a nuestra plataforma! Tu participación es fundamental para crear un mundo más accesible y solidario para todos.
+                Explora nuestra aplicación para descubrir información valiosa sobre la accesibilidad de transportes públicos y establecimientos cercanos a ti. Únete a la comunidad, comparte tus experiencias y ayúdanos a mejorar la accesibilidad para todos.
+            </p>
+            <button id="toggleButton">CLICKEAME!</button>
+            <div id="extraContent" style="display: none;">
+                <p>
+                    ¡Juntos podemos hacer la diferencia y construir un entorno más inclusivo y accesible para todos! <3
+                </p>
+                <!-- You can add more content here -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Add more sections as needed -->
+
+</main>
+<script>
+    const toggleButton = document.getElementById('toggleButton');
+    const extraContent = document.getElementById('extraContent');
+
+    toggleButton.addEventListener('click', function() {
+        if (extraContent.style.display === 'none') {
+            extraContent.style.display = 'block';
+            toggleButton.textContent = 'Ocultar';
+        } else {
+            extraContent.style.display = 'none';
+            toggleButton.textContent = 'CLICKEAME!';
+        }
+    });
+
+    // JavaScript for the carousel
+    document.addEventListener("DOMContentLoaded", function () {
+        let currentSlide = 0;
+        const slides = document.querySelectorAll(".slide");
+
+        function showSlide(n) {
+            slides.forEach((slide) => {
+                slide.style.display = "none";
+            });
+            slides[n].style.display = "block";
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Show first slide
+        showSlide(currentSlide);
+
+        // Automatic slide change (optional)
+        setInterval(nextSlide, 3000); // Change slide every 3 seconds
+
+        // Previous and Next buttons (optional)
+        // Add event listeners or use your own navigation method
+        // Example: document.getElementById("prevButton").addEventListener("click", prevSlide);
+        // Example: document.getElementById("nextButton").addEventListener("click", nextSlide);
+    });
+
+</script>
+
+<script>
+    // Add this code within the <script> tag in your HTML file
+    document.addEventListener("DOMContentLoaded", function () {
+        // Existing carousel code...
+
+        // Get the signup and login buttons by their classes
+        const signupButton = document.querySelector(".signup-button");
+        const loginButton = document.querySelector(".login-button");
+
+        // Add event listeners to the buttons
+        signupButton.addEventListener("click", function () {
+            // Redirect to the signup section by changing the URL
+            window.location.href = "register";
+        });
+
+        loginButton.addEventListener("click", function () {
+            // Redirect to the login section by changing the URL
+            window.location.href = "login";
+        });
+
+        // Rest of your existing code...
+    });
+
+</script>
+</body>
+
+
+</html>

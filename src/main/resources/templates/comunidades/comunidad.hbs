@@ -1,0 +1,45 @@
+{{#partial "contenido" }}
+<head>
+    <link rel="stylesheet" href="/css/establecimiento.css">
+    <title>Comunidad Nueva</title>
+</head>
+    <form method="POST" {{#if comunidad.id}}
+          action="/comunidades/{{comunidad.id}}" {{else}} action="/comunidades/nuevo" {{/if}}>
+        <div class="form-group">
+            <label>Nombre</label>
+            <input name="nombre" {{#if comunidad}}
+                   value="{{comunidad.nombre}}" {{/if}} placeholder="Nombre">
+        </div>
+
+        <div class="form-group">
+            <label>Descripcion</label>
+            <input name="descripcion" {{#if comunidad}}
+                   value="{{comunidad.descripcion}}" {{/if}} placeholder="Descripcion">
+        </div>
+
+        <div class="form-group">
+            <label>Miembros Actuales</label>
+            <select name="miembrosActuales" multiple>
+                {{#each comunidad.miembros}}
+                    <option value="{{id}}">{{userName}}</option>
+                {{/each}}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Miembros Disponibles</label>
+            <select name="miembros" multiple>
+                {{#each miembrosDisponibles}}
+                    <option value="{{id}}" {{#if contieneMiembro ../comunidad this.id}}
+                            selected {{/if}}>{{userName}}</option>
+                {{/each}}
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+        <div class="footer">
+            <a href="/comunidades" class="btn btn-secondary">Volver</a>
+        </div>
+{{/partial}}
+{{> templates/base }}

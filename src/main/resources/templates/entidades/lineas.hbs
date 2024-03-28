@@ -1,0 +1,33 @@
+{{#partial "contenido" }}
+    <h2>Lineas</h2>
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <tr>
+                <th>Nombre</th>
+                <th>Estacion Origen</th>
+                <th>Estacion Destino</th>
+                <th>Estaciones</th>
+            </tr>
+            <tbody>
+            {{#each lineas}}
+                <tr>
+                    <td>{{this.nombre}}</td>
+                    <td>{{this.estacionOrigen.nombre}}</td>
+                    <td>{{this.estacionDestino.nombre}}</td>
+                    <td>
+                        {{#each this.estaciones}}
+                            {{this.nombre}}<br>
+                        {{/each}}
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+    <div align="center">
+        <a class="btn btn-primary" href="/linea/crear">Agregar Linea</a>
+    </div>
+    <div class="footer">
+        <a href="/admin/config" class="btn btn-secondary">Volver</a>
+    </div>
+{{/partial}}
+{{> templates/base }}

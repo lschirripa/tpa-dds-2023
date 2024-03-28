@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/css/establecimiento.css">
+    <title>Formulario</title>
+</head>
+<body>
+<h1>Completa el formulario</h1>
+<form method="post" action="establecimientos/nuevo">
+    <label for="tipo">Tipo:</label>
+    <select name="tipo" id="tipo">
+        <option value="Sucursal">Sucursal</option>
+        <option value="Estacion">Estacion</option>
+    </select><br>
+
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" id="nombre"><br>
+
+    <label for="latitud">Latitud:</label>
+    <input type="text" name="latitud" id="latitud"><br>
+
+    <label for="longitud">Longitud:</label>
+    <input type="text" name="longitud" id="longitud"><br>
+
+    <label for="servicios">Servicios:</label>
+    <select name="servicios" id="servicios" multiple>
+        {{#each serviciosDisponibles}}
+            <option value="{{this}}">{{this}}</option>
+        {{/each}}
+    </select><br>
+
+    <input type="submit" value="Enviar">
+</form>
+</body>
+<div class="footer">
+    <a href="/establecimientos" class="btn btn-secondary">Volver</a>
+</div>
+</html>

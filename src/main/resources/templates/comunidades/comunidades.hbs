@@ -1,0 +1,43 @@
+{{#partial "contenido" }}
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <tr>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Miembros</th>
+                <th>Grado de Confianza</th>
+                <th>Acciones</th>
+            </tr>
+            <tbody>
+            {{#each comunidades}}
+                <tr>
+                    <td>{{this.nombre}}</td>
+                    <td>{{this.descripcion}}</td>
+                    <td>
+                        {{#each this.miembros}}
+                            {{this.userName}}<br>
+                        {{/each}}
+                    <td> {{this.gradoDeConfianza}} </td>
+                    <td>
+                        <a class="btn btn-secondary" href="/comunidades/{{this.id}}/editar"><i
+                                class="fa-solid fa-pen-to-square"></i></a>
+                        <form method="POST" action="/comunidades/{{this.id}}/eliminar"
+                              onsubmit="return confirm('¿Estás seguro de que deseas eliminar esta comunidad?');">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn btn-danger"><i
+                                    class="fa-solid fa-trash-can"></i></button>
+                        </form>
+                    </td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+    <div align="center">
+        <a class="btn btn-primary" href="/comunidades/crear">Agregar Comunidad</a>
+    </div>
+    <div class="footer">
+        <a href="/admin/config" class="btn btn-secondary">Volver</a>
+    </div>
+{{/partial}}
+{{> templates/base }}

@@ -1,0 +1,82 @@
+h2 {
+  color: black; /* Azul */
+}
+
+label {
+  color: black; /* Azul para etiquetas */
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #007bff; /* Borde azul para campos de texto y select */
+  border-radius: 4px;
+}
+
+select {
+  /* Agregar un fondo celeste claro para el select */
+  background-color: #c7e2ff;
+}
+
+button.btn-primary {
+  background-color: #007bff; /* Azul para el fondo del botón */
+  border-color: #007bff; /* Borde azul para el botón */
+  color: #fff; /* Texto blanco para el botón */
+}
+
+button.btn-primary:hover {
+  background-color: #0056b3; /* Azul más oscuro al pasar el cursor */
+  border-color: #0056b3; /* Borde más oscuro al pasar el cursor */
+}
+
+.filters {
+  margin-bottom: 20px;
+}
+
+.filters .filter {
+  margin-bottom: 10px;
+}
+
+.filters label {
+  color: #007bff; /* Azul para etiquetas de filtro */
+}
+
+.filters input[type="text"],
+.filters select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #007bff; /* Borde azul para campos de filtro */
+  border-radius: 4px;
+}
+
+.filters select {
+  background-color: #c7e2ff; /* Fondo celeste claro para selects */
+}
+
+/* Estilos para la tabla de incidentes */
+.table th {
+  background-color: #007bff; /* Fondo azul para encabezados de tabla */
+  color: #fff; /* Texto blanco para encabezados de tabla */
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #c7e2ff; /* Fondo celeste claro para filas impares de tabla */
+}
+
+/* Estilos para los botones */
+button.btn-primary,
+a.btn-primary {
+  background-color: #007bff; /* Azul para el fondo de botones */
+  border-color: #007bff; /* Borde azul para botones */
+  color: #fff; /* Texto blanco para botones */
+}
+
+button.btn-secondary,
+a.btn-secondary {
+  background-color: #c7e2ff; /* Fondo celeste claro para botones secundarios */
+  border-color: #c7e2ff; /* Borde celeste claro para botones secundarios */
+  color: #black; /* Texto azul para botones secundarios */
+}

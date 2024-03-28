@@ -1,0 +1,101 @@
+/* Estilo para el contenedor principal */
+.user-profile {
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para el título principal */
+.profile-title h1 {
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+}
+
+/* Estilo para el subtítulo con la imagen pequeña */
+.subtitle {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.subtitle img {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+}
+
+/* Estilo para los elementos de perfil */
+.profile-item {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+/* Estilo para etiquetas (como 'Usuario', 'Nombre', etc.) */
+.profile-item .label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Estilo para botones Agregar y Eliminar */
+.profile-item a.btn {
+    margin: 5px;
+}
+
+/* Estilo para listas */
+.profile-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Estilo para elementos de lista */
+.profile-item li {
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Estilo para el pie de página */
+.footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Estilo para botones Volver y Editar */
+.footer a.btn {
+    margin: 5px;
+}
+
+/* Estilo para el botón Editar Perfil */
+.footer a.btn.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Estilo para el botón Editar Perfil al pasar el mouse */
+.footer a.btn.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para el botón Eliminar */
+.footer a.btn.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+/* Estilo para el botón Eliminar al pasar el mouse */
+.footer a.btn.btn-danger:hover {
+    background-color: #c82333;
+}
