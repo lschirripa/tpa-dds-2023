@@ -1,3 +1,7 @@
+## Requirements of the project <a href="https://github.com/lschirripa/tpa-dds-2023/blob/main/requirements.pdf">here<a/>
+
+<tr></tr>
+
 # java-base-project
 
 Esta es una plantilla de proyecto diseñada para: 
